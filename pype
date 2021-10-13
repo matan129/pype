@@ -75,6 +75,9 @@ if __name__ == "__main__":
         """).strip())
     parser.add_argument("--verbose", "-v", action="store_true", default=False)
     args = parser.parse_args()
-
-    main(dedent(args.py_code), args.verbose)
+    
+    try:
+        main(dedent(args.py_code), args.verbose)
+    except KeyboardInterrupt:
+        pass
 
